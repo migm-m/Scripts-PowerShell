@@ -1,0 +1,18 @@
+Function Get-ArchivosPorFecha { 
+[CmdletBinding()] param ( 
+[Parameter()] [Array] $archivos, 
+
+[Parameter()] [String] $mes, 
+
+[Parameter()] [String] $year, 
+
+[Parameter()] [Array] $route 
+
+) 
+Get-ChildItem -Path $ruta -Include $tipoArchivo –Recurse 
+
+Where-Object { 
+          $_.lastwritetime.month -eq $month -AND $_.lastwritetime.year -eq $year } 
+} 
+
+ 
